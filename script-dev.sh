@@ -57,6 +57,23 @@ java -version
 javac -version
 
 # -----------------------------
+# Instalar Git
+# -----------------------------
+echo "Instalando Git..."
+sudo apt install git -y
+git --version
+
+# Configurar Git
+read -p "Digite seu nome para o Git (user.name): " git_name
+git config --global user.name "$git_name"
+
+read -p "Digite seu e-mail para o Git (user.email): " git_email
+git config --global user.email "$git_email"
+
+echo "Git configurado:"
+git config --list
+
+# -----------------------------
 # Instalar VS Code
 # -----------------------------
 echo "Por favor, baixe o VS Code (.deb 64-bit) e coloque na pasta ~/Downloads."
