@@ -32,6 +32,26 @@ echo "Atualizando repositórios..."
 sudo apt update && sudo apt upgrade -y
 
 # -----------------------------
+# Remover programas indesejados
+# -----------------------------
+echo "Removendo Firefox e Thunderbird..."
+sudo apt purge -y firefox* thunderbird*
+sudo apt autoremove --purge -y
+sudo apt clean
+
+# Opcional: remover perfis de usuário (cache/configurações pessoais)
+rm -rf ~/.mozilla
+rm -rf ~/.thunderbird
+echo "Firefox e Thunderbird removidos com sucesso."
+
+# -----------------------------
+# Instalar Google Chrome
+# -----------------------------
+echo "Baixando e instalando Google Chrome..."
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P ~/Downloads
+sudo apt install -y ~/Downloads/google-chrome-stable_current_amd64.deb
+
+# -----------------------------
 # Instalar MySQL Server
 # -----------------------------
 echo "Instalando MySQL Server..."
